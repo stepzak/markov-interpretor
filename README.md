@@ -5,6 +5,8 @@
 
 ```cd src/python-markov/```
 
+*настроить `src/constants.py` 
+
 ## Запуск
 
 ```python -m src.main -h```

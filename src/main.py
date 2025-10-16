@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
     parser.add_argument('filepath', type=str, help='Path to file with rules')
     parser.add_argument('--ignore-whitespaces', "-iw", help='Will ignore whitespaces in rules', action='store_true')
-    parser.add_argument('--max_iterations', "-mi", help='Will ignore whitespaces in rules', type=int, default=128)
+    parser.add_argument('--max_iterations', "-mi", help='Maximum iterations', type=int, default=128)
     args = parser.parse_args()
 
     main()
