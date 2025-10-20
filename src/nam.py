@@ -50,9 +50,11 @@ class NAM:
                 self.logger.debug(f"Adding {rule}")
                 self.rules.append(rule)
 
-    def apply(self, line: str):
+    def apply(self, line: str, by_steps: bool = True):
         iters = 0
         while iters<self.max_iterations:
+            if by_steps:
+                input("Press Enter for next step...")
             for rule in self.rules:
                 to_replace = rule.to_replace
                 replacement = rule.replacement

@@ -10,8 +10,10 @@ def main():
     while True:
         try:
             line = input("Input line: ")
-            result = nam_object.apply(line)
+            result = nam_object.apply(line, by_steps = args.by_steps)
             logger.info(f"Result: {result}")
+            logger.debug(f"Input length: {len(line)}")
+            logger.debug(f"Output length: {len(result)}")
         except (KeyboardInterrupt, EOFError):
             print("\nBye!")
             break
@@ -40,6 +42,7 @@ if __name__ == '__main__':
 
     parser.add_argument('filepath', type=str, help='Path to file with rules')
     parser.add_argument('--ignore-whitespaces', "-iw", help='Will ignore whitespaces in rules', action='store_true')
+    parser.add_argument('--by-steps', "-bs", help='Will enable completion by steps', action='store_true')
     parser.add_argument('--max_iterations', "-mi", help='Maximum iterations', type=int, default=128)
     args = parser.parse_args()
 
